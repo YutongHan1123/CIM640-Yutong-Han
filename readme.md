@@ -1,15 +1,5 @@
 # CIM 640 - Fall 2018
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
-[I'm an inline-style link](https://www.google.com)
+# HOMEWORK 1
+## INTERACTIVE P5JS
 
-impossible app
-
-list
-* pinapple juice
-* sprite
-* cranberry juice
+[I'm an inline-style link](file:///Users/yutonghan/Documents/GitHub/CIM640/hw/p5/hw-01/index.html)
