@@ -2,6 +2,12 @@
 
   var selection, textInput, submitButton;
 
+//  var posX = [0,100,200,300];
+//  var posY = [0,100,200,300];
+
+  var posX = [];
+  var posY = [];
+
   var numberOfImages = 0;
 
 
@@ -39,22 +45,38 @@ function setup() {
     }else if(selection.value() == "moon"){
       curImage = moon;
     }
+
+    posX = [];
+    posY = [];
+//create new array
+    for(var a = 0; a< numberOfImages; a++){
+      posX[a] = random(width);
+      posY[a] = random(height);
+      console.log("x: " + posX[a] + " y: " + posY[a]);
+
+    }
+
   });
 
   curImage = sun;
+
+  //console.log(posX[1]);
 }
 
 
 function draw() {
   // put drawing code here
-  frameRate(5);
+  //frameRate(5);
   background(255);
-  for(var i = 0; i<numberOfImages; i++){
-    console.log(i);
-    console.log(curImage);
-    image(curImage, random(width),random(height), curImage.width/random(1,5),curImage.height/random(1,5));
+  //for(var i = 0; i<numberOfImages; i++){
+    //console.log(i);
+    //console.log(curImage);
+    //image(curImage, random(width),random(height), curImage.width/random(1,5),curImage.height/random(1,5));
+  //}
+  for(var i = 0; i < numberOfImages; i++ ){
+    image(curImage,posX[i],posY[i], curImage.width/4, curImage.height/4);
+//delete previous memeory of sun existence
   }
-
 }
 
 
