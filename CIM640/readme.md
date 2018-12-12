@@ -1,4 +1,9 @@
 # CIM 640 - Fall 2018
+## HOMEWORK1-Impossible App
+[!Auto-Yoghurt Machine](https://github.com/YutongHan1123/CIM640-Yutong-Han/blob/master/CIM640/hw/p5/homework1/Auto-Yoghurt%20Machine.png)
+
+
+
 # MIDTERM PROJECT -- PLAY WITH BUBBLES
 ## INTENTION AND MOTIVATION
 Since I saw the videos—Learning p5.js by shiffman that Zeven recommended before, I became more and more curious about programming. It’s really fun to see magic change in just several steps. When I saw those videos, I used to think it’s so easy to mimic and create similar functions. However, it’s a totally different picture when I truly practice. 
