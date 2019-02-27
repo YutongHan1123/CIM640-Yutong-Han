@@ -27,7 +27,7 @@ function setup() {
     stroke(255);
 
     var button = createButton("reset");
-    button.mousePressed(resetSketch);
+    button.mousePressed(resetSketch());
 }
 
 function resetSketch(){

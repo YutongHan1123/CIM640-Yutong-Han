@@ -8,6 +8,22 @@ var x=200;
 var y2=200;
 var speed=2;
 
+var objs = [];
+var btns = [];
+var FPS = 60;
+var timepast = 0;
+var R = 200;
+var G = 150;
+var B = 50;
+var bR = 0;
+var bG = 0;
+var bB = 50;
+var eraserRange = 20;
+var timerRange = 50;
+var brushType = "CIRCLE";
+var pbrushType = "CIRCLE";
+var isPlaying = true;
+var isMenuHide = false;
 
 function preload() {
   let style = document.createElement('link')
@@ -42,6 +58,61 @@ function draw() {
   // put drawing code here
   // background(127);
   background(bg);
+
+  function FuncBtn(X, Y, W, H, CMD) {
+    this.x = X;
+    this.y = Y;
+    this.w = W;
+    this.h = H;
+    this.cmd = CMD;
+  }
+  FuncBtn.prototype.isMouseInBtn = function() {
+    if (mouseX >= this.x && mouseX <= this.x + this.w &&
+      mouseY >= this.y && mouseY <= this.y + this.h) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  FuncBtn.prototype.displayBtn = function() {
+  stroke(0);
+  strokeWeight(1);
+  fill(255, 255, 255);
+  rect(this.x, this.y, this.w, this.h, 5);
+  if (this.cmd == "timer") {
+
+    translate(this.x + this.w / 2, this.y + this.h / 2);
+    noFill();
+    ellipse(0, 0, 22, 22);
+    ellipse(0, 0, 25, 25);
+    fill(0);
+    ellipse(0, 0, 3, 3);
+    strokeWeight(2);
+    line(0, 0, 5, 0);
+    line(0, 0, 0, -7);
+    resetMatrix();
+  } else if (this.cmd == "eraser") {
+    fill(0);
+    noStroke();
+    translate(this.x + this.w / 2, this.y + this.h / 2);
+    textSize(25);
+    textAlign(CENTER);
+    textStyle(BOLD);
+    text("E", 0, 8);
+    resetMatrix();
+  } else if (this.cmd == "clear") {
+
+    fill(0);
+    noStroke();
+    translate(this.x + this.w / 2, this.y + this.h / 2);
+    textSize(25);
+    textAlign(CENTER);
+    textStyle(BOLD);
+    text("C", 0, 8);
+    resetMatrix();
+}
+}
 
   textSize(42);
   textAlign(LEFT,CENTER);
